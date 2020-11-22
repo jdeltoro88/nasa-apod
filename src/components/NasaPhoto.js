@@ -2,7 +2,7 @@ import React,  {useState, useEffect } from 'react'
 
 
 export default function NasaPhoto() {
-    const [photoData, setPhotoData] = useState(null);
+    const [photoData, setPhotoData] = useState();
 
     useEffect(() => {
         fetchPhoto();
@@ -10,7 +10,7 @@ export default function NasaPhoto() {
 
         async function fetchPhoto() {
             const res = await fetch(
-                `https://api.nasa.gov/planetary/apod?api_key=GDX60bOVbUgY7yc9RjbNZMBIQHNBbqQunbPAyLVW`
+                `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`
             );
 
             const data = await res.json();
@@ -25,20 +25,14 @@ if (!photoData) return <div/>
 
 return (
     <div>
+        <img src={photoData.url} alt={photoData.title} />
+    <div>
+        <h1> {photoData.title}</h1>
+        <p>{photoData.date}</p>
 
-        <img 
-
-
-        src={photoData.url}
-        alt={photoData.title}
-
-        />
+<p>{}</p>
 </div>
-    
-
-
-    
-    
+</div>
 
 )
 }
