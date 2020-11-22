@@ -1,11 +1,11 @@
-import  {useState, useEffect } from 'react'
-import React from 'react'
+import React,  {useState, useEffect } from 'react'
+
 
 export default function NasaPhoto() {
     const [photoData, setPhotoData] = useState(null);
 
     useEffect(() => {
-        fetchPhoto()
+        fetchPhoto();
 
 
         async function fetchPhoto() {
@@ -15,7 +15,7 @@ export default function NasaPhoto() {
 
             const data = await res.json();
             setPhotoData(data);
-            console.log(data)
+            console.log(data);
         }
     
 }, []);
