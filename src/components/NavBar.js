@@ -6,7 +6,7 @@ export default function NavBar() {
         <div className="navbar">
             <ul>
                 <Link className="link" to="/" exact >Home</Link>
-                <Link classname='link' to='./RoverPhoto' >Rover</Link>
+                <Link className='link' to='./RoverPhoto' >Rover</Link>
             </ul>
         </div>
     )
