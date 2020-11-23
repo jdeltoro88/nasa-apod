@@ -20,7 +20,7 @@ export default function NasaPhoto() {
 
             const data = await res.json();
             setPhotoData(data);
-            console.log(data);
+           
         }
     
 }, []);
@@ -31,6 +31,7 @@ if (!photoData) return <div/>
 return (
     <>
     <NavBar/>
+    
     <div className='nasa-photo'>
         {photoData.media_type === 'image' ? (
         <img src={photoData.url} alt={photoData.title} className='photo'/>
