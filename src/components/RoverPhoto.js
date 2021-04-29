@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 
 const apiKey = process.env.REACT_APP_NASA_KEY
 
-export default function NasaPhoto() {
+export default function RoverPhoto() {
     const [photoData, setPhotoData] = useState();
 
     useEffect(() => {
@@ -16,7 +16,8 @@ export default function NasaPhoto() {
             const res = await fetch(
                 //`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`
                 //`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
-                `https://api.nasa.gov/planetary/apod?date=2021-4-15&api_key=DEMO_KEY`
+                //`https://api.nasa.gov/planetary/apod?date=2021-4-15&api_key=DEMO_KEY`
+                `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY`
             );
 
             const data = await res.json();
@@ -34,7 +35,7 @@ return (
     <>
     <NavBar/>
     
-    <div className='nasa-photo'>
+    <div className='rover-photo'>
         {photoData.media_type === 'image' ? (
         <img src={photoData.url} alt={photoData.title} className='photo'/>
         ) : (
